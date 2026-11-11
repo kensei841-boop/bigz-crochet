@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ms" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>The Bigz Crochet</title>
+  <meta name="description" content="Katalog dan tempahan kraf crochet buatan tangan oleh The Bigz Crochet.">
+  <meta name="theme-color" content="#14855B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=1.0.0">
+</head>
+<body>
+
+  <!-- Splash (hilang serta-merta selepas data awam siap; data sudah disuntik oleh doGet) -->
+  <div id="splash" class="splash" aria-live="polite"><div class="spin"></div><p>Memuat The Bigz Crochet…</p></div>
+
+  <!-- ═════════ PELANGGAN ═════════ -->
+  <div id="pub" hidden>
+    <header class="p-head" id="pHead"></header>
+    <main class="p-main">
+      <section class="view" id="v-home"></section>
+      <section class="view" id="v-catalog"></section>
+      <section class="view" id="v-product"></section>
+      <section class="view" id="v-cart"></section>
+      <section class="view" id="v-status"></section>
+      <section class="view" id="v-help"></section>
+    </main>
+    <div id="stickyBar" class="sticky-bar" hidden></div>
+    <nav class="bnav" id="bnav" aria-label="Navigasi utama">
+      <button data-act="go" data-v="home" data-n="home"><i class="bi bi-house-door"></i><span>Laman Utama</span></button>
+      <button data-act="go" data-v="catalog" data-n="catalog"><i class="bi bi-grid"></i><span>Katalog</span></button>
+      <button data-act="go" data-v="cart" data-n="cart"><i class="bi bi-bag"></i><b class="badge" id="navBadge" hidden>0</b><span>Troli</span></button>
+      <button data-act="go" data-v="help" data-n="help"><i class="bi bi-chat-square-text"></i><span>Bantuan</span></button>
+    </nav>
+  </div>
+
+  <!-- ═════════ LOG MASUK ADMIN ═════════ -->
+  <section id="login" class="login-wrap" hidden></section>
+
+  <!-- ═════════ ADMIN ═════════ -->
+  <div id="adm" hidden>
+    <aside class="a-side" id="aSide"></aside>
+    <div class="a-scrim" data-act="sideClose"></div>
+    <div class="a-body">
+      <header class="a-top" id="aTop"></header>
+      <main class="a-main">
+        <section class="view" id="a-dash"></section>
+        <section class="view" id="a-orders"></section>
+        <section class="view" id="a-order"></section>
+        <section class="view" id="a-products"></section>
+        <section class="view" id="a-pform"></section>
+        <section class="view" id="a-cust"></section>
+        <section class="view" id="a-reports"></section>
+        <section class="view" id="a-settings"></section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal / bottom-sheet (pratinjau, borang, pengesahan — tidak pernah buka tab baharu) -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-veil" data-act="modalClose"></div>
+    <div class="modal-box" role="dialog" aria-modal="true" id="modalBox"></div>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="js/config.js?v=1.0.0"></script>
+  <!-- Mula muat turun katalog serta-merta (selari dengan pemuatan skrip lain) -->
+  <script>
+    window.__BOOT_P = /^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(APP_CONFIG.GAS_URL)
+      ? fetch(APP_CONFIG.GAS_URL + '?action=boot').then(function (r) { return r.json(); }).catch(function () { return null; }) : null;
+  </script>
+  <script src="js/api.js?v=1.0.0"></script>
+  <script src="js/core.js?v=1.0.0"></script>
+  <script src="js/admin.js?v=1.0.0"></script>
+  <script src="js/admin-extra.js?v=1.0.0"></script>
+  <script src="js/main.js?v=1.0.0"></script>
+</body>
+</html>
